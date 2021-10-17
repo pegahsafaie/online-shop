@@ -1,9 +1,9 @@
 const { DateTime } = require("luxon");
 const util = require('util')
 const CleanCSS = require("clean-css");
+const path = require("path");
 
 module.exports = function(eleventyConfig) {
-
   // https://www.11ty.io/docs/quicktips/inline-css/
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
@@ -20,6 +20,14 @@ module.exports = function(eleventyConfig) {
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
+
+  eleventyConfig.addFilter('sort_array', (arr, order, type) => {
+    return arr;
+  });
+
+  eleventyConfig.addFilter('relative_url', (value) => {
+    return path;
   });
 
   let markdownIt = require("markdown-it");
@@ -43,12 +51,15 @@ module.exports = function(eleventyConfig) {
     const md = new markdownIt(options)
     return md.render(value)
   })
+
   return {
     templateFormats: [
       "md",
       "njk",
       "html",
-      "liquid"
+      "liquid",
+      "jpg",
+      "svg"
     ],
 
     // If your site lives in a different subdirectory, change this.

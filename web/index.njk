@@ -3,11 +3,202 @@ layout: layouts/home.njk
 tags:
   - nav
 navtitle: Home
+white_header: true
+sections:
+  - type: hero_section
+    component_file: hero_section.njk
+    section_id: hero_section
+    background_image: images/header.jpg
+    background_image_opacity: 65
+    content: |-
+        # Real, beautiful plants right to your door
+        Don't forget to add your Snipcart API key to the site's configuration to enable Cart actions.
+    actions:
+      - title: See all items
+        url: "/store"
+        arrow: true
+        style: primary
+  - type: featured_products_section
+    component_file: featured_products_section.njk
+    section_id: best_sellers_section
+    title: Best sellers
+    icon: true
+    light_title: true
+    featured_products:
+      - plant1.md
+      - plant3.md
+      - plant5.md
+      - plant7.md
+  - type: featured_categories_section
+    component_file: featured_categories_section.njk
+    section_id: featured_categories_section
+    featured_categories:
+      - bigplants.md
+      - cactuses.md
+  - type: testimonials_section
+    component_file: testimonials_section.njk
+    section_id: testimonials_section
+    title: Testimonials
+    testimonials:
+        - author:
+            name: John Dope
+            location: Colorado, USA
+          text: I didn't know the Snipcart guys were into herbs as well! How beautiful is
+            that Planty theme. I'm going to launch a killer JAMstack e-commerce store using
+            this for sure.
+        - author:
+            name: Major Payne
+            location: VA, USA
+          text: Well I'll be d*mned. These plants really ARE greener than any of my recruits.
+  - type: promotion_section
+    component_file: promotion_section.njk
+    section_id: promotion_section
+    title: A new home interior for summer
+    subtitle: from $149.99
+    image: images/promo.jpg
+    background_image: images/leaf.svg
+    cta:
+      title: Discover
+      url: "/store"
+      style: secondary
+      arrow: true
+seo:
+  title: Planty Theme
+  description: The preview of the Planty theme
+  extra:
+    - name: og:type
+      value: website
+      keyName: property
+    - name: og:title
+      value: Planty Theme
+      keyName: property
+    - name: og:description
+      value: The preview of the Planty theme
+      keyName: property
+    - name: og:image
+      value: images/header.jpg
+      keyName: property
+      relativeUrl: true
+    - name: twitter:card
+      value: summary_large_image
+    - name: twitter:title
+      value: Planty Theme
+    - name: twitter:description
+      value: The preview of the Planty theme
+    - name: twitter:image
+      value: images/header.jpg
+      relativeUrl: true
+product_pages:
+  - plant1.md
+  - plant2.md
+  - plant3.md
+  - plant4.md
+  - plant5.md
+  - plant6.md
+  - plant7.md
+  - plant8.md
+  - plant9.md
+products: 
+  - layout: product
+    id: '1'
+    price: '49.40' 
+    title: Nulla suscipit
+    description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit velit lectus, vitae efficitur quam mollis eget. Integer porta at nisl eget tincidunt. 
+    default_thumbnail_image: images/plant1.jpg
+    default_original_image: images/plant1-lg.jpg
+    featured: true
+    order: 1
+    category: bigplants.md
+  - layout: product
+    id: '2'
+    price: '99.00'
+    title: Integer porta
+    description: Suspendisse efficitur eget erat sit amet efficitur. 
+    default_thumbnail_image: images/plant2.jpg
+    default_original_image: images/plant2-lg.jpg
+    order: 2
+    category: cactuses.md
+  - layout: product
+    id: '3'
+    price: '150.00'
+    title: Curabitur eu tempor
+    description: Nulla non pretium metus, vitae finibus lectus.
+    default_thumbnail_image: images/plant3.jpg
+    default_original_image: images/plant3-lg.jpg
+    featured: true
+    order: 3
+    category: content/category/cactuses.md
+    seo:
+      title: Curabitur eu tempor
+      description: Nulla non pretium metus, vitae finibus lectus
+      extra:
+        - name: og:type
+          value: website
+          keyName: property
+        - name: og:title
+          value: Curabitur eu tempor
+          keyName: property
+        - name: og:description
+          value: Nulla non pretium metus, vitae finibus lectus
+          keyName: property
+        - name: og:image
+          value: images/plant3-lg.jpg
+          keyName: property
+          relativeUrl: true
+        - name: twitter:card
+          value: summary_large_image
+        - name: twitter:title
+          value: Curabitur eu tempor
+        - name: twitter:description
+          value: Nulla non pretium metus, vitae finibus lectus
+        - name: twitter:image
+          value: images/plant3-lg.jpg
+          relativeUrl: true
+  - layout: product
+    id: '4'
+    price: '24.99'
+    title: Cras molestie
+    description: Maecenas pretium blandit ex id lobortis.
+    default_thumbnail_image: images/plant4.jpg
+    default_original_image: images/plant4-lg.jpg
+    order: 4
+    category: content/category/cactuses.md
+    seo:
+          title: Cras molestie
+          description: Maecenas pretium blandit ex id lobortis
+          extra:
+            - name: og:type
+              value: website
+              keyName: property
+            - name: og:title
+              value: Cras molestie
+              keyName: property
+            - name: og:description
+              value: Maecenas pretium blandit ex id lobortis
+              keyName: property
+            - name: og:image
+              value: images/plant4-lg.jpg
+              keyName: property
+              relativeUrl: true
+            - name: twitter:card
+              value: summary_large_image
+            - name: twitter:title
+              value: Cras molestie
+            - name: twitter:description
+              value: Maecenas pretium blandit ex id lobortis
+            - name: twitter:image
+              value: images/plant4-lg.jpg
+              relativeUrl: true
+categories:
+  - bigPlants.md
+  - cactuses.md
+  - europe.md
+  - summer.md 
 ---
-
-<h1>Latest Posts</h1>
-
-{% set postslist = collections.myPosts %}
-{% include "postslist.njk" %}
-
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+<main class="content">
+    {% for section in sections %}
+    {% set include_dict = {'section': section, 'page': page, 'site': site} %}
+    {% set component = section.component_file %}
+    {% include component %}
+    {% endfor %}
+</main

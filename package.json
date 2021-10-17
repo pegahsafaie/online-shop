@@ -10,9 +10,15 @@
     "build-web": "lerna bootstrap && cd web && npm run build",
     "lint": "lerna run lint",
     "postinstall": "lerna bootstrap",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "npx sass .\\web\\sass\\main.scss.njk web\\_site\\css\\main.css"
   },
   "devDependencies": {
     "lerna": "^3.16.4"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "eleventy-plugin-sass": "^1.2.0",
+    "sass": "^1.43.2"
   }
 }
