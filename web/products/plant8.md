@@ -3,11 +3,12 @@ layout: product
 id: '8'
 price: '50.00'
 title: Fusce sed
+permalink: store/Fusce sed/index.html
 description: In cursus sagittis eros non congue.
-default_thumbnail_image: images/plant8.jpg
-default_original_image: images/plant8-lg.jpg
+default_thumbnail_image: /images/plant8.jpg
+default_original_image: /images/plant8-lg.jpg
 order: 8
-category: content/category/summer.md
+category: summer.md
 seo:
   title: Fusce sed
   description: In cursus sagittis eros non congue
@@ -22,7 +23,7 @@ seo:
       value: In cursus sagittis eros non congue
       keyName: property
     - name: og:image
-      value: images/plant8-lg.jpg
+      value: /images/plant8-lg.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
@@ -32,7 +33,7 @@ seo:
     - name: twitter:description
       value: In cursus sagittis eros non congue
     - name: twitter:image
-      value: images/plant8-lg.jpg
+      value: /images/plant8-lg.jpg
       relativeUrl: true
 ---
 

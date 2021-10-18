@@ -16,7 +16,7 @@ seo:
       value: This is the store page
       keyName: property
     - name: og:image
-      value: images/plant2-lg.jpg
+      value: /images/plant2-lg.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
@@ -26,6 +26,6 @@ seo:
     - name: twitter:description
       value: This is the store page
     - name: twitter:image
-      value: images/plant2-lg.jpg
+      value: /images/plant2-lg.jpg
       relativeUrl: true
 ---

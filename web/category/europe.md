@@ -1,31 +1,32 @@
 ---
-title: Summer plants
+title: Plants from Europe
 layout: category
-order: 4
+order: 3
+permalink: store/categories/Plants from Europe/index.html
 seo:
-  title: Summer plants
+  title: Plants from Europe
   description: This is the store page
   extra:
     - name: og:type
       value: website
       keyName: property
     - name: og:title
-      value: Summer plants
+      value: Plants from Europe
       keyName: property
     - name: og:description
       value: This is the store page
       keyName: property
     - name: og:image
-      value: images/plant8-lg.jpg
+      value: /images/plant4-lg.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
       value: summary_large_image
     - name: twitter:title
-      value: Summer plants
+      value: Plants from Europe
     - name: twitter:description
       value: This is the store page
     - name: twitter:image
-      value: images/plant8-lg.jpg
+      value: /images/plant4-lg.jpg
       relativeUrl: true
 ---

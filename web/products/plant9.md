@@ -3,12 +3,13 @@ layout: product
 id: '9'
 price: '400.00'
 title: Fusce sagittis
+permalink: store/Fusce sagittis/index.html
 description: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci.
-default_thumbnail_image: images/plant9.jpg
-default_original_image: images/plant9-lg.jpg
+default_thumbnail_image: /images/plant9.jpg
+default_original_image: /images/plant9-lg.jpg
 featured: true
 order: 9
-category: content/category/cactuses.md
+category: cactuses.md
 seo:
   title: Fusce sagittis
   description: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci
@@ -23,7 +24,7 @@ seo:
       value: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci
       keyName: property
     - name: og:image
-      value: images/plant9-lg.jpg
+      value: /images/plant9-lg.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
@@ -33,7 +34,7 @@ seo:
     - name: twitter:description
       value: Nulla diam diam, maximus gravida efficitur eu, ultricies quis orci
     - name: twitter:image
-      value: images/plant9-lg.jpg
+      value: /images/plant9-lg.jpg
       relativeUrl: true
 ---
 

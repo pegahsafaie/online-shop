@@ -30,27 +30,17 @@ module.exports = function(eleventyConfig) {
     return path;
   });
 
-  let markdownIt = require("markdown-it");
-  let markdownItAnchor = require("markdown-it-anchor");
-  let options = {
-    html: true,
-    breaks: true,
-    linkify: true
-  };
-  let opts = {
-    permalink: true,
-    permalinkClass: "direct-link",
-    permalinkSymbol: "#"
-  };
+  eleventyConfig.addFilter('where', (arr, prop , val) => {
+    return arr.filter(item => item[prop] === val)
+  });
 
-  eleventyConfig.setLibrary("md", markdownIt(options)
-    .use(markdownItAnchor, opts)
-  );
+  eleventyConfig.addFilter('not_where', (arr, prop , val) => {
+    return arr.filter(item => item[prop] !== val)
+  });
 
-  eleventyConfig.addFilter("markdownify", function(value) {
-    const md = new markdownIt(options)
-    return md.render(value)
-  })
+  eleventyConfig.addFilter('first', (arr) => {
+    return arr[0];
+  });
 
   return {
     templateFormats: [

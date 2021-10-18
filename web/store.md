@@ -1,23 +1,27 @@
 ---
 title: Store
-layout: store
+layout: home.njk
+tags: myStore
 sections:
   - type: store_section
+    component_file: store_section.html
     section_id: store_section
   - type: featured_products_section
+    component_file: featured_products_section.njk
     section_id: featured_products_section
     title: Best sellers
     icon: true
     featured_products:
-      - content/products/plant1.md
-      - content/products/plant3.md
-      - content/products/plant5.md
-      - content/products/plant7.md
+      - plant1.md
+      - plant3.md
+      - plant5.md
+      - plant7.md
   - type: promotion_section
+    component_file: promotion_section.njk
     section_id: promotion_section
     title: A new home interior for summer
     subtitle: from $149.99
-    image: images/promo.jpg
+    image: /images/promo.jpg
     background_image: /images/leaf.svg
     cta:
       title: Discover
@@ -38,7 +42,7 @@ seo:
       value: This is the store page
       keyName: property
     - name: og:image
-      value: images/header.jpg
+      value: /images/header.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
@@ -48,6 +52,6 @@ seo:
     - name: twitter:description
       value: This is the store page
     - name: twitter:image
-      value: images/header.jpg
+      value: /images/header.jpg
       relativeUrl: true
 ---

@@ -4,10 +4,10 @@ id: '2'
 price: '99.00'
 title: Integer porta
 description: Suspendisse efficitur eget erat sit amet efficitur. 
-default_thumbnail_image: images/plant2.jpg
-default_original_image: images/plant2-lg.jpg
+default_thumbnail_image: /images/plant2.jpg
+default_original_image: /images/plant2-lg.jpg
 order: 2
-category: content/category/cactuses.md
+category: cactuses.md
 seo:
   title: Integer porta
   description: Suspendisse efficitur eget erat sit amet efficitur
@@ -22,7 +22,7 @@ seo:
       value: Suspendisse efficitur eget erat sit amet efficitur
       keyName: property
     - name: og:image
-      value: images/plant2-lg.jpg
+      value: /images/plant2-lg.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
@@ -32,8 +32,9 @@ seo:
     - name: twitter:description
       value: Suspendisse efficitur eget erat sit amet efficitur
     - name: twitter:image
-      value: images/plant2-lg.jpg
+      value: /images/plant2-lg.jpg
       relativeUrl: true
+permalink: store/Integer porta/index.html
 ---
 
 # Integer porta

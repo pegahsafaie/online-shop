@@ -1,17 +1,21 @@
+{% set is_white_header = white_header | default(false, true) %}
 {% set is_logo_light = false %}
+{% if is_white_header or page.layout == "product" %}
+    {% set is_logo_light = true %}
+{% endif %}
 <header class="header">
-    <nav class="nav nav--light">
+    <nav class="nav{% if is_white_header %} nav--dark{%endif%}">
         <div class="nav__logo">
             <a href="{{ '/' | url }}">
-                {% set include_dict = {'image': 'images/logo-white.svg', 'cssClass': 'nav__logo-image', 'alt': 'Site logo'} %}
+                {% set include_dict = {'image': '/images/logo-white.svg', 'cssClass': 'nav__logo-image', 'alt': 'Site logo'} %}
                     {% include "picture.html" %}
             </a>
         </div>
         <ul class="nav__menu">
-            {% for item in ['Store', 'About', 'FAQ'] %}
+            {% for item in menu %}
                 <li class="nav__menu-item">
-                    <a href="{{ item | url }}" class="nav__menu-item-link">
-                        {{ item }}
+                    <a href="{{ item.url | url }}" class="nav__menu-item-link">
+                        {{ item.title }}
                     </a>
                 </li>
             {% endfor %}

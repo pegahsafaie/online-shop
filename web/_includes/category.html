@@ -1,0 +1,44 @@
+---
+layout: base.njk
+sections:
+  - type: store_section
+    component_file: store_section.html
+    section_id: store_section
+  - type: featured_products_section
+    component_file: featured_products_section.njk
+    section_id: featured_products_section
+    title: Best sellers
+    icon: true
+    featured_products:
+      - plant1.md
+      - plant3.md
+      - plant5.md
+      - plant7.md
+  - type: promotion_section
+    component_file: promotion_section.njk
+    section_id: promotion_section
+    title: A new home interior for summer
+    subtitle: from $149.99
+    image: /images/promo.jpg
+    background_image: /images/leaf.svg
+    cta:
+      title: Discover
+      url: "/store"
+      style: secondary
+      arrow: true
+---
+{% block content %}
+<main class="content{% if page_css_class %} {{page_css_class}}{%endif%}">
+    {% for section in sections %}
+        {% if section.type === 'store_section' %}
+            {% set include_dict = {'section': section, 'category_url': page.url} %}
+            {% set component = section.component_file %}
+            {% include component %}
+        {% else %}
+            {% set include_dict = {'section': section} %}
+            {% set component = section.component_file %}
+            {% include component %}
+        {% endif %}
+    {% endfor %}
+</main>
+{% endblock %}

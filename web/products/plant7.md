@@ -3,11 +3,12 @@ layout: product
 id: '7'
 price: '18.90'
 title: Sed consectetur
+permalink: store/Sed consectetur/index.html
 description: Fusce sed tortor id diam rhoncus accumsan.
-default_thumbnail_image: images/plant7.jpg
-default_original_image: images/plant7-lg.jpg
+default_thumbnail_image: /images/plant7.jpg
+default_original_image: /images/plant7-lg.jpg
 order: 7
-category: content/category/bigplants.md
+category: bigplants.md
 seo:
   title: Sed consectetur
   description: Fusce sed tortor id diam rhoncus accumsan
@@ -22,7 +23,7 @@ seo:
       value: Fusce sed tortor id diam rhoncus accumsan
       keyName: property
     - name: og:image
-      value: images/plant7-lg.jpg
+      value: /images/plant7-lg.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
@@ -32,7 +33,7 @@ seo:
     - name: twitter:description
       value: Fusce sed tortor id diam rhoncus accumsan
     - name: twitter:image
-      value: images/plant7-lg.jpg
+      value: /images/plant7-lg.jpg
       relativeUrl: true
 ---
 

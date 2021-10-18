@@ -1,3 +1,21 @@
+---json
+{
+  "menu": [
+  {
+    "title": "Store",
+    "url": "/store"
+  },
+  {
+    "title": "About",
+    "url": "/about"
+  },
+  {
+    "title": "FAQ",
+    "url": "/faq"
+  }
+    ]
+}
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,15 +24,14 @@
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
       {# <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}"> #}
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
   </head>
   <body>
 
     {% include "header.njk" %}
     <div class="site-wrapper">
-        
-        {{ content | safe }}
-
+    
+    {{ content | safe}}
         
     </div>
   </body>

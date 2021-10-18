@@ -1,0 +1,17 @@
+{% set section = include_dict.section %}
+<section class="content__row" data-id="{{section.section_id}}">
+    <div class="content__row content__row--direction-row store__head">
+        <h1 class="store__title">All Products</h1>
+    </div>
+
+    <div class="content__row store__container">
+        <nav class="store__nav">
+            {% include "nav_categories.html" %}
+        </nav>
+        <section class="store__products">
+            {% set product_pages = products %}
+            {% set include_dict = {'product_pages': product_pages, 'cssClass': 'store__product-grid'} %}
+            {% include "product_grid.html" %}
+        </section>
+    </div>
+</section>

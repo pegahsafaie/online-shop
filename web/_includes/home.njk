@@ -1,0 +1,11 @@
+---
+layout: base.njk
+templateClass: tmpl-home
+---
+<main class="content">
+  {% for section in sections %}
+  {% set include_dict = {'section': section, 'page': page, 'site': site} %}
+  {% set component = section.component_file %}
+  {% include component %}
+  {% endfor %}
+</main>

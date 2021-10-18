@@ -1,31 +1,32 @@
 ---
-title: Cactuses
+title: Big plants
 layout: category
-order: 2
+order: 1
+permalink: store/categories/Big plants/index.html
 seo:
-  title: Cactuses
+  title: Big plants
   description: This is the store page
   extra:
     - name: og:type
       value: website
       keyName: property
     - name: og:title
-      value: Cactuses
+      value: Big plants
       keyName: property
     - name: og:description
       value: This is the store page
       keyName: property
     - name: og:image
-      value: images/plant2-lg.jpg
+      value: /images/plant1-lg.jpg
       keyName: property
       relativeUrl: true
     - name: twitter:card
       value: summary_large_image
     - name: twitter:title
-      value: Cactuses
+      value: Big plants
     - name: twitter:description
       value: This is the store page
     - name: twitter:image
-      value: images/plant2-lg.jpg
+      value: /images/plant1-lg.jpg
       relativeUrl: true
 ---

@@ -9,6 +9,6 @@
             {{section.title}}
         </h2>
         {% set featured_products = section.featured_products %}
-        {% set include_dict = {'products': featured_products, 'site': site} %}
+        {% set include_dict = {'products': featured_products} %}
         {% include "featured_grid.html" %}
     </section>

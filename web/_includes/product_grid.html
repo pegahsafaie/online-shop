@@ -1,11 +1,16 @@
 
-{% set site = include_dict.site %}
 {% set listCssClass = include_dict.cssClass %}
-{% set category_url = include_dict.category_url %}
-
+{% set category_url = page.url.includes('categories') %}
 <ul class="product-grid {% if listCssClass %}{{ listCssClass }}{%endif%}">
     {% for product_page in products %}
-        {% set include_dict = { 'product_page': product_page, 'site': site } %}
+    {% if not category_url %}
+        {% set include_dict = { 'product_page': product_page } %}
         {% include "product_grid_item.html" %}
-    {% endfor %}
+    {% else %}
+        {% if page.fileSlug == product_page.category %}
+            {% set include_dict = { 'product_page': product_page } %}
+            {% include "product_grid_item.html" %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
 </ul>
