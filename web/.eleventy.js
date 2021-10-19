@@ -2,8 +2,14 @@ const { DateTime } = require("luxon");
 const util = require('util')
 const CleanCSS = require("clean-css");
 const path = require("path");
-
+const urlFor = require('./utils/imageUrl');
 module.exports = function(eleventyConfig) {
+
+  eleventyConfig.addShortcode('imageUrlFor', (image) => {
+    return urlFor(image)
+      .auto('format')
+  })
+
   // https://www.11ty.io/docs/quicktips/inline-css/
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
@@ -22,14 +28,6 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
-  eleventyConfig.addFilter('sort_array', (arr, order, type) => {
-    return arr;
-  });
-
-  eleventyConfig.addFilter('relative_url', (value) => {
-    return path;
-  });
-
   eleventyConfig.addFilter('where', (arr, prop , val) => {
     return arr.filter(item => item[prop] === val)
   });
@@ -38,8 +36,8 @@ module.exports = function(eleventyConfig) {
     return arr.filter(item => item[prop] !== val)
   });
 
-  eleventyConfig.addFilter('first', (arr) => {
-    return arr[0];
+  eleventyConfig.addFilter('getCategory', (url) => {
+    return url.split('/').splice(3,1)
   });
 
   return {

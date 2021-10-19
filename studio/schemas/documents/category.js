@@ -9,9 +9,19 @@ export default {
       title: 'Title'
     },
     {
-      name: 'description',
-      type: 'text',
-      title: 'Description'
+      name: 'order',
+      type: 'number',
+      title: 'Order'
+    },
+    {
+      name: 'permalink',
+      type: 'string',
+      title: 'Permalink'
+    },
+    {
+      name: 'featured',
+      type: 'boolean',
+      title: 'Featured'
     }
   ]
 }

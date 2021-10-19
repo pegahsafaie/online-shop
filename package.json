@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
+    "eleventy-plugin-sanity-image": "^0.1.1",
     "eleventy-plugin-sass": "^1.2.0",
     "sass": "^1.43.2"
   }

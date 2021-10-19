@@ -8,7 +8,7 @@
             {% endif %}
             {{section.title}}
         </h2>
-        {% set featured_products = section.featured_products %}
-        {% set include_dict = {'products': featured_products} %}
+        {% set featured_products = products | where ('featured', true) %}
+        {% set include_dict = {'featured_products': featured_products} %}
         {% include "featured_grid.html" %}
     </section>

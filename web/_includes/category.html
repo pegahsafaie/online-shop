@@ -9,11 +9,6 @@ sections:
     section_id: featured_products_section
     title: Best sellers
     icon: true
-    featured_products:
-      - plant1.md
-      - plant3.md
-      - plant5.md
-      - plant7.md
   - type: promotion_section
     component_file: promotion_section.njk
     section_id: promotion_section
@@ -31,7 +26,7 @@ sections:
 <main class="content{% if page_css_class %} {{page_css_class}}{%endif%}">
     {% for section in sections %}
         {% if section.type === 'store_section' %}
-            {% set include_dict = {'section': section, 'category_url': page.url} %}
+            {% set include_dict = {'section': section} %}
             {% set component = section.component_file %}
             {% include component %}
         {% else %}

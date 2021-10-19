@@ -7,9 +7,15 @@
     <nav class="nav{% if is_white_header %} nav--dark{%endif%}">
         <div class="nav__logo">
             <a href="{{ '/' | url }}">
-                {% set include_dict = {'image': '/images/logo-white.svg', 'cssClass': 'nav__logo-image', 'alt': 'Site logo'} %}
+                {% if is_logo_light %}
+                    {% set include_dict = {'image': '/images/logo-white.svg', 'cssClass': 'nav__logo-image', 'alt': 'Site logo'} %}
                     {% include "picture.html" %}
+                {% else %}
+                    {% set include_dict = {'image': '/images/logo.svg', 'cssClass': 'nav__logo-image', 'alt': 'Site logo'} %}
+                    {% include "picture.html" %}
+                {% endif %}
             </a>
+
         </div>
         <ul class="nav__menu">
             {% for item in menu %}

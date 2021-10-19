@@ -10,7 +10,11 @@
         </nav>
         <section class="store__products">
             {% set product_pages = products %}
-            {% set include_dict = {'product_pages': product_pages, 'cssClass': 'store__product-grid'} %}
+            {% if page.url.includes('categories') %}
+                {% set include_dict = {'product_pages': product_pages, 'cssClass': 'store__product-grid', 'category': page.url | getCategory } %}
+            {% else %}
+                {% set include_dict = {'product_pages': product_pages, 'cssClass': 'store__product-grid' } %}
+            {%endif%}
             {% include "product_grid.html" %}
         </section>
     </div>

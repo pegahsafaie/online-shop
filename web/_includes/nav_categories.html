@@ -1,6 +1,6 @@
 <ul class="store__nav-items">
-    {% set category_pages = categories %}
-    {% for item in category_pages %}
+    {% for item in categories %}
+    
         <li class="store__nav-item">
             <a href="{{ '/' | url }}store/categories/{{ item.title }}">
                 {{ item.title }}

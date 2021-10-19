@@ -11,11 +11,6 @@ sections:
     section_id: featured_products_section
     title: Best sellers
     icon: true
-    featured_products:
-      - plant1.md
-      - plant3.md
-      - plant5.md
-      - plant7.md
   - type: promotion_section
     component_file: promotion_section.njk
     section_id: promotion_section

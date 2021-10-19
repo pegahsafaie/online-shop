@@ -1,10 +1,8 @@
 
 <section class="content__row" data-id="{{section.section_id}}">
-    {% set categories = section.featured_categories %}
-    {% for category in categories %}
-        {% set category_page = category %}
-        <h2 class="content__row-title">{{ category_page }}</h2>
-        {% set include_dict = {'category_url': category_page, 'site': site} %}
+    {% for category in categories | where('featured', true) %}
+        <h2 class="content__row-title">{{ category.title }}</h2>
+        {% set include_dict = { 'product_page': product_page, category: category.title } %}
         {% include "product_grid.html" %}
     {% endfor %}
 </section>
