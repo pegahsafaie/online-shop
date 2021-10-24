@@ -24,7 +24,8 @@ layout: base.njk
             </div>
             <figure class="product__figure">
                 <picture>
-                    <img class="product__image" src="{%  imageUrlFor product.default_original_image  %}">    
+                    {% set include_dict = {'image': product.default_original_image, 'alt': product.title, 'cssClass': 'product__image'} %}
+                    {% include "picture.html" %}
                 </picture>
             </figure>
             <div class="product__details">

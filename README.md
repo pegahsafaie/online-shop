@@ -1,4 +1,4 @@
-# online shop
+# online shop usinf 11ty, sanity and shopify storefront
 
 _Simple blog starter with [11ty](https://11ty.io)._
 

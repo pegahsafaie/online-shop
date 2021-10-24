@@ -17,9 +17,14 @@
     "lerna": "^3.16.4"
   },
   "dependencies": {
+    "@shopify/shopify-api": "^1.4.3",
     "classnames": "^2.3.1",
+    "dotenv": "^10.0.0",
     "eleventy-plugin-sanity-image": "^0.1.1",
     "eleventy-plugin-sass": "^1.2.0",
-    "sass": "^1.43.2"
+    "isomorphic-fetch": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "sass": "^1.43.2",
+    "shopify-api-node": "^3.8.0"
   }
 }

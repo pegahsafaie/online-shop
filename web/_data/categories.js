@@ -1,23 +1,48 @@
-const groq = require('groq')
-const client = require('../utils/sanityClient.js')
-const overlayDrafts = require('../utils/overlayDrafts')
-const hasToken = !!client.config().token
 
-function generateCategory (category) {
-  return {
-    ...category,
+const fetch = require('node-fetch');
+require('dotenv').config();
+
+const postToShopify= async ({ query, variables }) => {
+  try {
+    const result = await fetch('https://fead98efbc2f255c200e225ab3194bc4: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@likorbar.myshopify.com/admin/api/2021-10/graphql.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ query, variables }),
+    }).then((res) => res.json())
+
+    return result.data
+  } catch (error) {
+    console.log(error)
   }
 }
 
-async function getCategory () {
-  // Learn more: https://www.sanity.io/docs/data-store/how-queries-work
-  const filter = groq`*[_type == "category"]`
-  const order = `| order(order asc)`
-  const query = [filter, order].join(' ')
-  const docs = await client.fetch(query).catch(err => console.error(err))
-  const reducedDocs = overlayDrafts(hasToken, docs)
-  const prepareCategories = reducedDocs.map(generateCategory)
-  return prepareCategories
-}
+module.exports = async () => {
 
-module.exports = getCategory
+  const result = await postToShopify({
+    query: `{
+      shop {
+        products(first:250, query:"-product_type:''") {
+          edges {
+              node {
+                productType
+            }
+          }
+        }
+      }
+    }`,
+    variables: null
+  });
+
+  const productTypes = new Set(result.shop.products.edges.map(({node}) => (node.productType)));
+  
+  const convertedProductTypes = Array.from(productTypes).map((productType, i) => ({
+    title: productType,
+    order: i,
+    featured: true,
+    permalink: `/store/categories/${productType}/index.html`
+  }));
+
+  return convertedProductTypes;
+};
