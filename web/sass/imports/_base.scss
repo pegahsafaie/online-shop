@@ -24,3 +24,44 @@ img {
     height: auto;
     max-width: 100%;
 }
+
+.cart-table {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  .cart-table-cell {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  .cart-table-heading {
+    padding: 10px 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .cart-table-row {
+    text-align: center;
+  }
+  
+  .cart-total {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cart-total-content {
+    grid-column: 1 / span 5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 1024px) {
+    .cart-total-content {
+      grid-column: 4 / span 2;
+    }
+  }
+  .cart-total-column p {
+    padding: 10px;
+    margin: 0;
+    text-align: right;
+  }
+  .cart-total-column p:last-child {
+    font-weight: 700;
+    background: #f2eee2;
+  }

@@ -4,10 +4,12 @@ require('dotenv').config();
 
 const postToShopify= async ({ query, variables }) => {
   try {
-    const result = await fetch('https://fead98efbc2f255c200e225ab3194bc4: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@likorbar.myshopify.com/admin/api/2021-10/graphql.json', {
+    const result = await fetch(process.env.SHOPIFY_API_ENDPOINT, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token':
+        '84a744a6f1aed8924d74114dfd84ddd1'
       },
       body: JSON.stringify({ query, variables }),
     }).then((res) => res.json())
@@ -25,7 +27,7 @@ module.exports = async () => {
       products (sortKey: TITLE, first: 100) {
         edges {
           node {
-            id
+            variants(first:1) {edges{node{id}}}
             title
             description
             productType
@@ -55,12 +57,8 @@ module.exports = async () => {
     variables: null
   });
   
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-  console.log(JSON.stringify(response));
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-
   const convertedProducts= response.products.edges.map(({node}, i) => ({
-    id: node.id,
+    id: node.variants.edges[0].node.id,
     price: node.priceRange.minVariantPrice.amount,
     description: node.description,
     title: node.title,

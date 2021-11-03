@@ -40,6 +40,11 @@ module.exports = function(eleventyConfig) {
     return url.split('/').splice(3,1)
   });
 
+  // pass files directly through to the output
+  eleventyConfig.addPassthroughCopy({
+    "js": "js",
+  });
+
   return {
     templateFormats: [
       "md",
