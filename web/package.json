@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx eleventy",
-    "dev": "npx eleventy --watch --serve",
+    "build": "npx eleventy && npm run compile:sass",
+    "dev": "npm run compile:sass && npx eleventy --watch --serve",
     "now-build": "npm run build",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "DEBUG=* npx eleventy",
+    "compile:sass": "npx sass .\\sass\\main.scss.njk .\\_site\\css\\main.css"
   },
   "keywords": [],
   "author": "",
