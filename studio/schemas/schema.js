@@ -10,7 +10,8 @@ import category from './documents/category'
 // import post from './documents/post'
 // import siteSettings from './documents/siteSettings'
 import product from './documents/product'
-
+import about from './documents/about'
+import faq from './documents/faq'
 // Object types
 // import bodyPortableText from './objects/bodyPortableText'
 // import bioPortableText from './objects/bioPortableText'
@@ -31,8 +32,10 @@ export default createSchema({
     // post,
     category,
     product,
+    about,
     // author,
-    mainImage
+    mainImage,
+    faq
     // authorReference,
     // bodyPortableText,
     // bioPortableText,
