@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const postToShopify= async ({ query, variables }) => {
   try {
-    const result = await fetch(process.env.SHOPIFY_API_ENDPOINT, {
+    const result = await fetch("https://likorbar.myshopify.com/api/2021-10/graphql.json", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
