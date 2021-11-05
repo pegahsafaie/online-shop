@@ -52,7 +52,8 @@ module.exports = function(eleventyConfig) {
       "html",
       "liquid",
       "jpg",
-      "svg"
+      "svg",
+      "css"
     ],
 
     // If your site lives in a different subdirectory, change this.

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx eleventy && npm run compile:sass",
+    "build": "npx eleventy",
     "dev": "npm run compile:sass && npx eleventy --watch --serve",
     "now-build": "npm run build",
     "debug": "DEBUG=* npx eleventy",
