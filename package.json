@@ -13,7 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "lerna": "^3.16.4"
+    "lerna": "^3.16.4",
+    "sass-loader": "^12.3.0",
+    "sass": "^1.43.4"
   },
   "dependencies": {
     "@shopify/shopify-api": "^1.4.3",
@@ -22,7 +24,6 @@
     "eleventy-plugin-sanity-image": "^0.1.1",
     "eleventy-plugin-sass": "^1.2.0",
     "isomorphic-fetch": "^3.0.0",
-    "node-fetch": "^2.6.1",
-    "shopify-api-node": "^3.8.0"
+    "node-fetch": "^2.6.1"
   }
 }
