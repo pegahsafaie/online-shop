@@ -36,7 +36,7 @@ export default {
     {name: 'project-users', layout: {height: 'auto'}},
     {
       name: 'document-list',
-      options: {title: 'Newly added products', order: '_createdAt desc', types: ['product']},
+      options: {title: 'Newly added about posts', types: ['about']},
       layout: {width: 'medium'}
     }
   ]
