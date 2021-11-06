@@ -19,7 +19,7 @@ export default {
                 },
                 {
                   buildHookId: '6166c6ed39d9cff441c5becc',
-                  title: 'Blog Website',
+                  title: 'Likörbar',
                   name: 'online-shop-web',
                   apiId: 'ced071b0-0b91-4e43-8793-dd92b2712d61'
                 }
