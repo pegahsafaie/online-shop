@@ -30,8 +30,8 @@ export default createSchema({
     // in the studio.
     // siteSettings,
     // post,
-    // category, commented because we use shopify for category list
-    // product, commented because we use shopify for product list
+    category,
+    product,
     about,
     // author,
     mainImage,
